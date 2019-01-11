@@ -32,5 +32,4 @@ fun Date.toYear(): String {
     return SimpleDateFormat("yyyy").format(this)
 }
 
-
 fun toFormatString(text: String, format: String) = String.format(format, text)
