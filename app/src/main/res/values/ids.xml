@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="toolbar" type="id"/>
+    <item name="main_container" type="id"/>
+    <item name="tv_bayar" type="id"/>
+    <item name="viewpager" type="id"/>
+    <item name="main_appbar" type="id"/>
+    <item name="tv_disc" type="id"/>
+    <item name="cek_disc" type="id"/>
+    <item name="cek_voucher" type="id"/>
+    <item name="tv_voucher" type="id"/>
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="193dp"
+    android:layout_height="277dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
+            android:padding="8dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_marginTop="5dp"
+                android:id="@+id/img_food"
+                android:layout_width="match_parent"
+                android:layout_height="121dp"/>
+
+        <TextView
+                android:id="@+id/tv_name_food"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                app:cardBackgroundColor="#8e8e8e"
+                app:cardCornerRadius="10dp">
+
+            <TextView
+                    android:id="@+id/tv_price_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffff"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/layout_pesan"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom">
+
+        <ImageView
+                android:id="@+id/btn_minus"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_remove_circle"/>
+
+        <TextView
+                android:id="@+id/tv_jumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:textStyle="italic"
+                android:layout_centerInParent="true"/>
+
+        <ImageView
+                android:id="@+id/btn_plus"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_add_circle"/>
+
+    </RelativeLayout>
+
+    <Button
+            android:id="@+id/btn_pesan"
+            android:layout_width="179dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="bottom|center"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:text="@string/pesan"/>
+
+</android.support.v7.widget.CardView>

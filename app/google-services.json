@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "255656757707",
+    "firebase_url": "https://nastopapp.firebaseio.com",
+    "project_id": "nastopapp",
+    "storage_bucket": "nastopapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255656757707:android:c05871213798e5f6",
+        "android_client_info": {
+          "package_name": "com.zidan.topapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255656757707-ommt74m2ruobpf7ppsls3kbjfbvflrv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAsRUPrYp_M8HeqvZkMDBQKehaByesiuk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

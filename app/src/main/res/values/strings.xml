@@ -1,0 +1,297 @@
+<resources>
+    <string name="app_name">Nasi Goreng Top</string>
+    <string name="pesan">Pesan</string>
+    <string name="bluetooth">Bluetooth</string>
+
+    <array name="image_top_food">
+        <item>@drawable/nasgor_top</item>
+        <item>@drawable/nasgor_kabita</item>
+        <item>@drawable/nasgor_special</item>
+        <item>@drawable/nasgor_ayam</item>
+        <item>@drawable/nasgor_mawut</item>
+        <item>@drawable/nasgor_bakso</item>
+        <item>@drawable/nasgor_pedas</item>
+        <item>@drawable/nasgor_nugget</item>
+        <item>@drawable/nasgor_sosis</item>
+        <item>@drawable/nasgor_udang</item>
+        <item>@drawable/nasgor_ikan_asin</item>
+        <item>@drawable/nasgor_pete</item>
+        <item>@drawable/mie_goreng_ayam</item>
+        <item>@drawable/mie_goreng_top</item>
+        <item>@drawable/mie_goreng_special</item>
+        <item>@drawable/mie_goreng_seafood</item>
+        <item>@drawable/mie_kuah_ayam</item>
+        <item>@drawable/mie_kuah_top</item>
+        <item>@drawable/bihun_goreng</item>
+        <item>@drawable/capjay</item>
+        <item>@drawable/mie_capjay</item>
+        <item>@drawable/nasi_capjay</item>
+        <item>@drawable/tami_capjay</item>
+        <item>@drawable/kwetiaw_goreng_ayam</item>
+        <item>@drawable/kwetiaw_goreng_top</item>
+        <item>@drawable/kwetiaw_goreng_special</item>
+        <item>@drawable/kwetiaw_goreng_seafood</item>
+        <item>@drawable/bakso</item>
+        <item>@drawable/bakso_jumbo</item>
+        <item>@drawable/chicken_steak</item>
+        <item>@drawable/mie_hotplate</item>
+        <item>@drawable/kwetiaw_hotplate</item>
+    </array>
+
+    <array name="image_top_drink">
+        <item>@drawable/air_mineral</item>
+        <item>@drawable/teh_hangat</item>
+        <item>@drawable/es_teh</item>
+        <item>@drawable/jeruk_hangat</item>
+        <item>@drawable/es_jeruk</item>
+        <item>@drawable/teh_botol</item>
+        <item>@drawable/fruit_tea</item>
+        <item>@drawable/fruit_tea_kotak</item>
+        <item>@drawable/lemon_tea</item>
+        <item>@drawable/teh_kotak</item>
+        <item>@drawable/milkshake_strawberry</item>
+        <item>@drawable/milkshake_coklat</item>
+        <item>@drawable/jus_alpukat</item>
+        <item>@drawable/jus_sirsak</item>
+        <item>@drawable/jus_wortel</item>
+        <item>@drawable/jus_jambu_merah</item>
+        <item>@drawable/jus_jeruk</item>
+        <item>@drawable/jus_melon</item>
+        <item>@drawable/jus_tomat</item>
+        <item>@drawable/cappucino</item>
+        <item>@drawable/tebs</item>
+    </array>
+
+    <array name="image_top_other">
+        <item>@drawable/nasi_putih</item>
+        <item>@drawable/telor_ceplok</item>
+        <item>@drawable/krupuk_tengiri</item>
+        <item>@drawable/kacang_kecil</item>
+        <item>@drawable/mente</item>
+    </array>
+
+    <string-array name="name_top_food">
+        <item>NASI GORENG TOP</item>
+        <item>NASI GORENG KABITA</item>
+        <item>NASI GORENG SPECIAL</item>
+        <item>NASI GORENG AYAM</item>
+        <item>NASI GORENG MAWUT</item>
+        <item>NASI GORENG BAKSO</item>
+        <item>NASI GORENG PEDAS</item>
+        <item>NASI GORENG NUGGET</item>
+        <item>NASI GORENG SOSIS</item>
+        <item>NASI GORENG UDANG</item>
+        <item>NASI GORENG IKAN ASIN</item>
+        <item>NASI GORENG PETE</item>
+        <item>MIE GORENG AYAM</item>
+        <item>MIE GORENG TOP</item>
+        <item>MIE GORENG SPECIAL</item>
+        <item>MIE GORENG SEAFOOD</item>
+        <item>MIE KUAH AYAM</item>
+        <item>MIE KUAH TOP</item>
+        <item>BIHUN GORENG</item>
+        <item>CAPJAY</item>
+        <item>MIE CAPJAY</item>
+        <item>NASI CAPJAY</item>
+        <item>TAMI CAPJAY</item>
+        <item>KWETIAW GORENG AYAM</item>
+        <item>KWETIAW GORENG TOP</item>
+        <item>KWETIAW GORENG SPECIAL</item>
+        <item>KWETIAW GORENG SEAFOOD</item>
+        <item>BAKSO</item>
+        <item>BAKSO JUMBO</item>
+        <item>CHICKEN STEAK</item>
+        <item>MIE HOTPLATE</item>
+        <item>KWETIAW HOTPLATE</item>
+    </string-array>
+
+    <string-array name="name_top_drink">
+        <item>AIR MINERAL</item>
+        <item>TEH HANGAT</item>
+        <item>ES TEH</item>
+        <item>JERUK HANGAT</item>
+        <item>ES JERUK</item>
+        <item>TEH BOTOL</item>
+        <item>FRUIT TEA</item>
+        <item>FRUIT TEA KOTAK</item>
+        <item>LEMON TEA</item>
+        <item>TEH KOTAK</item>
+        <item>MILKSHAKE STRAWBERRY</item>
+        <item>MILKSHAKE COKLAT</item>
+        <item>JUS ALPUKAT</item>
+        <item>JUS SIRSAK</item>
+        <item>JUS WORTEL</item>
+        <item>JUS JAMBU MERAH</item>
+        <item>JUS JERUK</item>
+        <item>JUS MELON</item>
+        <item>JUS TOMAT</item>
+        <item>CAPPUCINO</item>
+        <item>TEBS</item>
+    </string-array>
+
+    <string-array name="name_top_other">
+        <item>NASI PUTIH</item>
+        <item>TELOR CEPLOK</item>
+        <item>KERUPUK MEJA</item>
+        <item>KACANG KECIL</item>
+        <item>MENTE</item>
+    </string-array>
+
+    <string-array name="price_top_food">
+        <item>18</item>
+        <item>12</item>
+        <item>14</item>
+        <item>14</item>
+        <item>14</item>
+        <item>18</item>
+        <item>10</item>
+        <item>18</item>
+        <item>14</item>
+        <item>17</item>
+        <item>15</item>
+        <item>14</item>
+        <item>15</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>15</item>
+        <item>18</item>
+        <item>15</item>
+        <item>15</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>15</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>12</item>
+        <item>14</item>
+        <item>17</item>
+        <item>17</item>
+        <item>18</item>
+    </string-array>
+
+    <string-array name="price_top_drink">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>6</item>
+        <item>6</item>
+        <item>5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>6</item>
+        <item>4</item>
+        <item>8</item>
+        <item>8</item>
+        <item>14</item>
+        <item>8</item>
+        <item>8</item>
+        <item>12</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>6</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="price_top_other">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>1</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="price_gojek_food">
+        <item>22</item>
+        <item>14</item>
+        <item>17</item>
+        <item>17</item>
+        <item>17</item>
+        <item>22</item>
+        <item>13</item>
+        <item>22</item>
+        <item>17</item>
+        <item>22</item>
+        <item>17</item>
+        <item>17</item>
+        <item>18</item>
+        <item>22</item>
+        <item>22</item>
+        <item>22</item>
+        <item>18</item>
+        <item>22</item>
+        <item>18</item>
+        <item>18</item>
+        <item>20</item>
+        <item>20</item>
+        <item>20</item>
+        <item>18</item>
+        <item>22</item>
+        <item>22</item>
+        <item>22</item>
+        <item>15</item>
+        <item>17</item>
+        <item>21</item>
+        <item>20</item>
+        <item>21</item>
+    </string-array>
+
+    <string-array name="price_gojek_drink">
+        <item>10</item>
+        <item>8</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>10</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>10</item>
+        <item>15</item>
+        <item>12</item>
+        <item>12</item>
+        <item>15</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>8</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="price_gojek_other">
+        <item>4</item>
+        <item>4</item>
+        <item>5</item>
+        <item>1</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="total_0">Total: 0</string>
+    <string name="koki">Koki</string>
+    <string name="cetak">Cetak</string>
+    <string name="pesan_gojek">Pesan Gojek</string>
+    <string name="bayar">Bayar:</string>
+    <string name="kembalian">Kembalian:</string>
+    <string name="pilih_meja">Pilih Meja</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_10">10</string>
+    <string name="promo">Disc/Voucher</string>
+    <string name="discount">Discount</string>
+    <string name="voucher">Voucher</string>
+
+</resources>
