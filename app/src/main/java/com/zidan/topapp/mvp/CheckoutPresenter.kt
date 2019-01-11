@@ -40,7 +40,7 @@ class CheckoutPresenter(private val view: CheckoutView) {
         else hari.child("NonGojek")
 
         if (isPromo){
-            val promoData = pembelian.child("Promo")
+            val promoData = hari.child("Promo")
             promoData.runTransaction(object : Transaction.Handler {
 
                 override fun doTransaction(mutableData: MutableData): Transaction.Result {
