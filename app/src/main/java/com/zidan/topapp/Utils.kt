@@ -19,7 +19,7 @@ fun View.gone() {
 
 @SuppressLint("SimpleDateFormat")
 fun Date.toSimpleString(): String {
-    return SimpleDateFormat("EEE, dd-MM-yy").format(this)
+    return SimpleDateFormat("EEE, dd MMM yyyy").format(this)
 }
 
 @SuppressLint("SimpleDateFormat")
