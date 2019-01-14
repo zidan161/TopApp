@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Nasi Goreng Top</string>
     <string name="pesan">Pesan</string>
-    <string name="bluetooth">Bluetooth</string>
 
     <array name="image_top_food">
         <item>@drawable/nasgor_top</item>
@@ -272,7 +271,6 @@
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="total_0">Total: 0</string>
     <string name="koki">Koki</string>
     <string name="cetak">Cetak</string>
@@ -290,7 +288,6 @@
     <string name="_8">8</string>
     <string name="_9">9</string>
     <string name="_10">10</string>
-    <string name="promo">Disc/Voucher</string>
     <string name="discount">Discount</string>
     <string name="voucher">Voucher</string>
 

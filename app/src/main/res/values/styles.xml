@@ -8,11 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
-    <style name="MyTabLayout" parent="Widget.Design.TabLayout">
-        <item name="tabGravity">fill</item>
-        <item name="tabMaxWidth">0dp</item>
-    </style>
-
 </resources>
