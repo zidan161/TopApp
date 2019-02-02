@@ -82,8 +82,8 @@ class CheckoutActivity : AppCompatActivity(), CheckoutView {
 
         rg_button.setOnCheckedChangeListener { _, checkedId ->
             val radioButton = findViewById<RadioButton>(checkedId)
-            meja = radioButton.text.toString() }
-
+            meja = radioButton.text.toString()
+        }
 
         cb_discount.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -173,7 +173,7 @@ class CheckoutActivity : AppCompatActivity(), CheckoutView {
         edt_bayar.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER){
                 val bayar = edt_bayar.text.toString().trim().toInt()
-                if (bayar > total){
+                if (bayar >= total){
                     tv_kembalian.text = "Kembalian: ${formatter.format(bayar - total)}"
                     cash = formatter.format(bayar)
                 }
@@ -253,12 +253,11 @@ class CheckoutActivity : AppCompatActivity(), CheckoutView {
             Log.d("findBT", "Success")
             presenter.openBT(mDevice, selectedItems)
 
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun setBluetoothOn() {
         loading.cancel()
         toast("Printer is Ready").show()

@@ -35,7 +35,7 @@ class MainAdapter(private val ctx: Context, private val items: List<Makanan>,
         fun bindItem(item: Makanan, listener1: (Makanan) -> Unit, listener2: (Makanan) -> Unit) {
             img_food.setImageResource(item.image)
             tv_name_food.text = item.name
-            tv_price_food.text = "Rp ${item.price}K"
+            tv_price_food.text = "Rp ${item.price}.000"
             tv_jumlah.text = "${item.count}"
 
             if (item.count < 1) {

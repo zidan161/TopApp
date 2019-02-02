@@ -16,7 +16,7 @@ class MainPresenter(private val view: MainView) {
             items.add(Makanan(name[i], price[i], gojek[i], image.getResourceId(i, 0), 0))
         }
         image.recycle()
-        view.getItems(items)
+        view.setItems(items)
     }
 
     fun initDataDrink(ctx: Context) {
@@ -29,7 +29,7 @@ class MainPresenter(private val view: MainView) {
             items.add(Makanan(name[i], price[i], gojek[i], image.getResourceId(i, 0), 0))
         }
         image.recycle()
-        view.getItems(items)
+        view.setItems(items)
     }
 
     fun initDataOther(ctx: Context) {
@@ -42,6 +42,6 @@ class MainPresenter(private val view: MainView) {
             items.add(Makanan(name[i], price[i], gojek[i], image.getResourceId(i, 0), 0))
         }
         image.recycle()
-        view.getItems(items)
+        view.setItems(items)
     }
 }

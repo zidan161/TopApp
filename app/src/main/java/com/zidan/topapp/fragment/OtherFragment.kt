@@ -31,7 +31,8 @@ class OtherFragment : Fragment(), MainView {
         return UI {
             recyclerView = recyclerView {
                 lparams(matchParent, wrapContent)
-                layoutManager = GridLayoutManager(ctx, 3)
+                padding = dip(5)
+                layoutManager = LinearLayoutManager(ctx)
             }
 
             theAdapter = MainAdapter(ctx, items, { clickButton(it, "Minus") }, { clickButton(it, "Plus") })
@@ -62,7 +63,7 @@ class OtherFragment : Fragment(), MainView {
         }
     }
 
-    override fun getItems(item: List<Makanan>) {
+    override fun setItems(item: List<Makanan>) {
         items.run {
             clear()
             addAll(item)

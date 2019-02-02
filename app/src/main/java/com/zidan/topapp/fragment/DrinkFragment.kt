@@ -8,8 +8,7 @@ import android.view.LayoutInflater
 import android.view.*
 import com.zidan.topapp.adapter.MainAdapter
 import com.zidan.topapp.data.Makanan
-import com.zidan.topapp.mvp.MainPresenter
-import com.zidan.topapp.mvp.MainView
+import com.zidan.topapp.mvp.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.support.v4.*
@@ -31,7 +30,8 @@ class DrinkFragment : Fragment(), MainView {
         return UI {
             recyclerView = recyclerView {
                 lparams(matchParent, wrapContent)
-                layoutManager = GridLayoutManager(ctx, 3)
+                padding = dip(5)
+                layoutManager = LinearLayoutManager(ctx)
             }
 
             theAdapter = MainAdapter(ctx, items, { clickButton(it, "Minus") }, { clickButton(it, "Plus") })
@@ -62,7 +62,7 @@ class DrinkFragment : Fragment(), MainView {
         }
     }
 
-    override fun getItems(item: List<Makanan>) {
+    override fun setItems(item: List<Makanan>) {
         items.run {
             clear()
             addAll(item)

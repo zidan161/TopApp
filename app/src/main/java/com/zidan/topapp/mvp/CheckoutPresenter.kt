@@ -5,11 +5,8 @@ import android.bluetooth.*
 import android.os.AsyncTask
 import android.util.Log
 import com.google.firebase.database.*
-import com.zidan.topapp.TextToPrint
+import com.zidan.topapp.*
 import com.zidan.topapp.data.Makanan
-import com.zidan.topapp.toMonth
-import com.zidan.topapp.toSimpleString
-import com.zidan.topapp.toYear
 import kotlinx.coroutines.*
 import java.io.*
 import java.util.*
@@ -34,45 +31,56 @@ class CheckoutPresenter(private val view: CheckoutView) {
 
         val tahun = FirebaseDatabase.getInstance().reference.child(cal.time.toYear())
         val bulan = tahun.child(cal.time.toMonth())
-        val hari = bulan.child(cal.time.toSimpleString())
+        val pekan = bulan.child("Pekan Ke ${cal.get(Calendar.WEEK_OF_MONTH)}")
+        val hari = pekan.child(cal.time.toSimpleString())
 
         val pembelian = if (isGojek) hari.child("Gojek")
         else hari.child("NonGojek")
 
-        if (isPromo){
-            val promoData = hari.child("Promo")
-            promoData.runTransaction(object : Transaction.Handler {
-
-                override fun doTransaction(mutableData: MutableData): Transaction.Result {
-                    var discount = mutableData.child("Discount").getValue(Int::class.java)
-                    var voucher = mutableData.child("Voucher").getValue(Int::class.java)
-
-                    val disc = promo.getValue("disc")
-                    val vouc = promo.getValue("vouc")
-
-                    if (discount == null){
-                        discount = disc
-                    } else {
-                        discount += disc
-                    }
-
-                    if (voucher == null){
-                        voucher = vouc
-                    } else {
-                        voucher += vouc
-                    }
-
-                    mutableData.child("Discount").value = discount
-                    mutableData.child("Voucher").value = voucher
-                    return Transaction.success(mutableData)
-                }
-
-                override fun onComplete(databaseError: DatabaseError?, p1: Boolean, p2: DataSnapshot?) {}
-            })
-        }
-
         for (i in selectedItems.indices) {
             val item = pembelian.child(selectedItems[i].name)
+
+            hari.runTransaction(object : Transaction.Handler {
+
+                override fun onComplete(p0: DatabaseError?, p1: Boolean, p2: DataSnapshot?) {}
+
+                override fun doTransaction(mutableData: MutableData): Transaction.Result {
+                    var totalSales = mutableData.child("TotalSales").getValue(Int::class.java)
+
+                    val allTotal = if (isGojek) selectedItems[i].gojekPrice.toInt() * 1000
+                    else selectedItems[i].price.toInt() * 1000
+
+                    if (totalSales == null){
+                        totalSales = allTotal
+                    } else {
+                        totalSales += allTotal
+                    }
+
+                    mutableData.child("TotalSales").value = totalSales
+                    return Transaction.success(mutableData)
+                }
+            })
+
+            pembelian.runTransaction(object : Transaction.Handler {
+
+                override fun onComplete(p0: DatabaseError?, p1: Boolean, p2: DataSnapshot?) {}
+
+                override fun doTransaction(mutableData: MutableData): Transaction.Result {
+                    var sales = mutableData.child("Sales").getValue(Int::class.java)
+
+                    val allSales = if (isGojek) selectedItems[i].gojekPrice.toInt() * 1000
+                    else selectedItems[i].price.toInt() * 1000
+
+                    if (sales == null){
+                        sales = allSales
+                    } else {
+                        sales += allSales
+                    }
+
+                    mutableData.child("Sales").value = sales
+                    return Transaction.success(mutableData)
+                }
+            })
 
             item.runTransaction(object : Transaction.Handler {
 
@@ -100,6 +108,43 @@ class CheckoutPresenter(private val view: CheckoutView) {
 
                     mutableData.child("Jumlah").value = jumlah
                     mutableData.child("Total").value = total
+                    return Transaction.success(mutableData)
+                }
+
+                override fun onComplete(databaseError: DatabaseError?, p1: Boolean, p2: DataSnapshot?) {}
+            })
+        }
+
+        if (isPromo){
+            hari.runTransaction(object : Transaction.Handler {
+
+                override fun doTransaction(mutableData: MutableData): Transaction.Result {
+                    var discount = mutableData.child("Promo").child("Discount").getValue(Int::class.java)
+                    var voucher = mutableData.child("Promo").child("Voucher").getValue(Int::class.java)
+                    var totalSales = mutableData.child("TotalSales").getValue(Int::class.java)!!
+
+                    val disc = promo.getValue("disc")
+                    val vouc = promo.getValue("vouc")
+
+                    if (discount == null){
+                        discount = disc
+                    } else {
+                        discount += disc
+                    }
+
+                    if (voucher == null){
+                        voucher = vouc
+                    } else {
+                        voucher += vouc
+                    }
+
+                    val allPromo = disc + vouc
+
+                    totalSales -= allPromo
+
+                    mutableData.child("TotalSales").value = totalSales
+                    mutableData.child("Discount").value = discount
+                    mutableData.child("Voucher").value = voucher
                     return Transaction.success(mutableData)
                 }
 

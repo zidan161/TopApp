@@ -8,6 +8,7 @@
         <item>@drawable/nasgor_special</item>
         <item>@drawable/nasgor_ayam</item>
         <item>@drawable/nasgor_mawut</item>
+        <item>@drawable/nasgor_seafood</item>
         <item>@drawable/nasgor_bakso</item>
         <item>@drawable/nasgor_pedas</item>
         <item>@drawable/nasgor_nugget</item>
@@ -50,8 +51,8 @@
         <item>@drawable/teh_kotak</item>
         <item>@drawable/milkshake_strawberry</item>
         <item>@drawable/milkshake_coklat</item>
+        <item>@drawable/milkshake_coklat</item>
         <item>@drawable/jus_alpukat</item>
-        <item>@drawable/jus_sirsak</item>
         <item>@drawable/jus_wortel</item>
         <item>@drawable/jus_jambu_merah</item>
         <item>@drawable/jus_jeruk</item>
@@ -62,11 +63,28 @@
     </array>
 
     <array name="image_top_other">
+        <item>@drawable/nasgor_ayam</item>
+        <item>@drawable/mie_goreng_ayam</item>
+        <item>@drawable/kwetiaw_goreng_ayam</item>
+        <item>@drawable/nasi_capjay</item>
+        <item>@drawable/bakso</item>
+        <item>@drawable/chicken_steak</item>
+        <item>@drawable/nasgor_ayam</item>
+        <item>@drawable/mie_goreng_ayam</item>
+        <item>@drawable/nasgor_ayam</item>
+        <item>@drawable/mie_goreng_ayam</item>
+        <item>@drawable/kwetiaw_goreng_ayam</item>
+        <item>@drawable/capjay</item>
+        <item>@drawable/nasgor_special</item>
+        <item>@drawable/mie_goreng_special</item>
+        <item>@drawable/kwetiaw_goreng_special</item>
         <item>@drawable/nasi_putih</item>
         <item>@drawable/telor_ceplok</item>
         <item>@drawable/krupuk_tengiri</item>
+        <item>@drawable/kerupuk_udang</item>
         <item>@drawable/kacang_kecil</item>
         <item>@drawable/mente</item>
+        <item>@drawable/logo_top</item>
     </array>
 
     <string-array name="name_top_food">
@@ -75,6 +93,7 @@
         <item>NASI GORENG SPECIAL</item>
         <item>NASI GORENG AYAM</item>
         <item>NASI GORENG MAWUT</item>
+        <item>NASI GORENG SEAFOOD</item>
         <item>NASI GORENG BAKSO</item>
         <item>NASI GORENG PEDAS</item>
         <item>NASI GORENG NUGGET</item>
@@ -117,8 +136,8 @@
         <item>TEH KOTAK</item>
         <item>MILKSHAKE STRAWBERRY</item>
         <item>MILKSHAKE COKLAT</item>
+        <item>MILKSHAKE CAPPUCINO</item>
         <item>JUS ALPUKAT</item>
-        <item>JUS SIRSAK</item>
         <item>JUS WORTEL</item>
         <item>JUS JAMBU MERAH</item>
         <item>JUS JERUK</item>
@@ -129,25 +148,43 @@
     </string-array>
 
     <string-array name="name_top_other">
+        <item>PAKET EKONOMIS 1</item>
+        <item>PAKET EKONOMIS 2</item>
+        <item>PAKET EKONOMIS 3</item>
+        <item>PAKET EKONOMIS 4</item>
+        <item>PAKET EKONOMIS 5</item>
+        <item>PAKET EKONOMIS 6</item>
+        <item>PAKET HEMAT A</item>
+        <item>PAKET HEMAT B</item>
+        <item>PAKET KARYAWAN 1</item>
+        <item>PAKET KARYAWAN 2</item>
+        <item>PAKET KARYAWAN 3</item>
+        <item>PAKET KARYAWAN 4</item>
+        <item>PAKET KABITA SPECIAL 1</item>
+        <item>PAKET KABITA SPECIAL 2</item>
+        <item>PAKET KABITA SPECIAL 3</item>
         <item>NASI PUTIH</item>
         <item>TELOR CEPLOK</item>
         <item>KERUPUK MEJA</item>
+        <item>KERUPUK UDANG</item>
         <item>KACANG KECIL</item>
         <item>MENTE</item>
+        <item>PEMBUNGKUS</item>
     </string-array>
 
     <string-array name="price_top_food">
         <item>18</item>
         <item>12</item>
-        <item>14</item>
+        <item>18</item>
         <item>14</item>
         <item>14</item>
         <item>18</item>
+        <item>14</item>
         <item>10</item>
         <item>18</item>
         <item>14</item>
-        <item>17</item>
-        <item>15</item>
+        <item>18</item>
+        <item>14</item>
         <item>14</item>
         <item>15</item>
         <item>18</item>
@@ -168,7 +205,7 @@
         <item>14</item>
         <item>17</item>
         <item>17</item>
-        <item>18</item>
+        <item>17</item>
     </string-array>
 
     <string-array name="price_top_drink">
@@ -184,9 +221,9 @@
         <item>4</item>
         <item>8</item>
         <item>8</item>
+        <item>8</item>
         <item>14</item>
-        <item>8</item>
-        <item>8</item>
+        <item>10</item>
         <item>12</item>
         <item>10</item>
         <item>10</item>
@@ -196,20 +233,38 @@
     </string-array>
 
     <string-array name="price_top_other">
+        <item>16</item>
+        <item>17</item>
+        <item>16</item>
+        <item>19</item>
+        <item>13</item>
+        <item>17</item>
+        <item>15</item>
+        <item>14</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>14</item>
+        <item>14</item>
+        <item>15</item>
+        <item>15</item>
         <item>5</item>
         <item>5</item>
         <item>5</item>
         <item>1</item>
+        <item>1</item>
         <item>5</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="price_gojek_food">
         <item>22</item>
         <item>14</item>
-        <item>17</item>
+        <item>22</item>
         <item>17</item>
         <item>17</item>
         <item>22</item>
+        <item>17</item>
         <item>13</item>
         <item>22</item>
         <item>17</item>
@@ -234,7 +289,7 @@
         <item>15</item>
         <item>17</item>
         <item>21</item>
-        <item>20</item>
+        <item>21</item>
         <item>21</item>
     </string-array>
 
@@ -251,8 +306,8 @@
         <item>9</item>
         <item>10</item>
         <item>10</item>
+        <item>10</item>
         <item>15</item>
-        <item>12</item>
         <item>12</item>
         <item>15</item>
         <item>12</item>
@@ -263,11 +318,28 @@
     </string-array>
 
     <string-array name="price_gojek_other">
+        <item>16</item>
+        <item>17</item>
+        <item>16</item>
+        <item>19</item>
+        <item>13</item>
+        <item>17</item>
+        <item>15</item>
+        <item>14</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>14</item>
+        <item>14</item>
+        <item>15</item>
+        <item>15</item>
         <item>4</item>
         <item>4</item>
         <item>5</item>
         <item>1</item>
+        <item>1</item>
         <item>5</item>
+        <item>1</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -290,5 +362,6 @@
     <string name="_10">10</string>
     <string name="discount">Discount</string>
     <string name="voucher">Voucher</string>
+    <string name="cek_total_sales">Cek Total Sales</string>
 
 </resources>

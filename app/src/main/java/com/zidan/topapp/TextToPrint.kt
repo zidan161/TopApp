@@ -10,28 +10,33 @@ class TextToPrint(private val mOutputStream: OutputStream, private val selectedI
 
     private val formatDef = byteArrayOf(0x1B, 0x21, 0x00)
     private val formatBoldMed = byteArrayOf(0x1B, 0x21, 0x20)
-    private val formatBoldBig = byteArrayOf(0x1B, 0x21, 0x10)
 
     private val center = byteArrayOf(0x1b, 'a'.toByte(), 0x01)
 
     fun setText(mSocket: BluetoothSocket, pembayaran: Map<String, Any>, isGojek: Boolean){
 
         val date = Calendar.getInstance().time
-        val name = "NASI GORENG TOP"
+        val name = "\nNASI GORENG TOP\n"
+        val penanda = if (isGojek){
+            "Gojek"
+        } else {
+            idInt
+        }
 
-        val text = "\n" +
-                "       Ruko Wijaya Kusuma\n" +
-                "      JL.Wijaya Kusuma no.40\n" +
-                "     Mengelo Sooko Mojokerto\n" +
+        val text =
+                "Ruko Wijaya Kusuma\n" +
+                "JL.Wijaya Kusuma no.40\n" +
+                "Mengelo Sooko Mojokerto\n"+
+                "Delivery Order: 0812 3108 2223\n"+
                 "--------------------------------\n" +
-                date.toSimpleString() +"     $idInt\n"+
+                date.toSimpleString() +"       $penanda\n"+
                 "--------------------------------\n" +
                 "Menu                         QTY\n" +
                 "--------------------------------\n" +
                 allItems(selectedItems, pembayaran, isGojek) +
-                "          Terima Kasih\n" +
-                "        Selamat Menikmati\n" +
-                " Berdoa Sebelum & Sesudah Makan\n\n\n\n"
+                "Terima Kasih\n" +
+                "Selamat Menikmati\n" +
+                "Berdoa Sebelum & Sesudah Makan\n\n\n\n"
 
         mOutputStream.write(center)
         mOutputStream.write(formatBoldMed)
@@ -84,8 +89,8 @@ class TextToPrint(private val mOutputStream: OutputStream, private val selectedI
             textMenu += toFormatString(selectedItems[i].name ,"%1$-29s") +
                     toFormatString(selectedItems[i].count.toString(), "%1$3s") +
                     "\n" +
-                    toFormatString("@ ${price}K" ,"%1$-28s") +
-                    toFormatString("${totalPrice}K", "%1$4s") +
+                    toFormatString("@ $price.000" ,"%1$-20s") +
+                    toFormatString("$totalPrice.000", "%1$12s") +
                     "\n"
         }
 
@@ -96,18 +101,18 @@ class TextToPrint(private val mOutputStream: OutputStream, private val selectedI
                 toFormatString("Discount", "%1$-29s") +
                 toFormatString("$disc%", "%1$3s") +
                 "\n"+
-                toFormatString("Voucher", "%1$-26s") +
-                toFormatString(formatter.format(vouc), "%1$6s") +
+                toFormatString("Voucher", "%1$-25s") +
+                toFormatString(formatter.format(vouc), "%1$7s") +
                 "\n"+"                        --------\n" +
-                toFormatString("Total", "%1$-26s") +
-                toFormatString(formatter.format(finalTotal), "%1$6s") +
+                toFormatString("Total", "%1$-25s") +
+                toFormatString(formatter.format(finalTotal), "%1$7s") +
                 "\n"+
-                toFormatString("Cash", "%1$-26s") +
-                toFormatString(cash, "%1$6s") +
+                toFormatString("Cash", "%1$-25s") +
+                toFormatString(cash, "%1$7s") +
                 "\n"+
-                toFormatString("Change", "%1$-26s")
+                toFormatString("Change", "%1$-25s")
 
-        textMenu += toFormatString(kembalian, "%1$6s")
+        textMenu += toFormatString(kembalian, "%1$7s")
 
         return textMenu
     }

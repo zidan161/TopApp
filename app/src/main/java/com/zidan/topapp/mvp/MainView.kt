@@ -4,5 +4,5 @@ import com.zidan.topapp.data.Makanan
 
 interface MainView {
 
-    fun getItems(item: List<Makanan>)
+    fun setItems(item: List<Makanan>)
 }

@@ -14,4 +14,9 @@
             android:title="@string/pesan"
             app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/btn_cek_sales"
+        android:title="@string/cek_total_sales"
+        app:showAsAction="never"/>
+
 </menu>
