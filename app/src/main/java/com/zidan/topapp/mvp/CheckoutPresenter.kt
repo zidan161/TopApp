@@ -143,8 +143,8 @@ class CheckoutPresenter(private val view: CheckoutView) {
                     totalSales -= allPromo
 
                     mutableData.child("TotalSales").value = totalSales
-                    mutableData.child("Discount").value = discount
-                    mutableData.child("Voucher").value = voucher
+                    mutableData.child("Promo").child("Discount").value = discount
+                    mutableData.child("Promo").child("Voucher").value = voucher
                     return Transaction.success(mutableData)
                 }
 
