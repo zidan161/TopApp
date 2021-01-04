@@ -4,5 +4,4 @@ interface  CheckoutView {
 
     fun setBluetoothOn()
     fun setBluetoothError()
-    fun Ok()
 }
