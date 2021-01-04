@@ -1,6 +1,6 @@
 package com.zidan.topapp.mvp
 
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 
 interface MainView {
 

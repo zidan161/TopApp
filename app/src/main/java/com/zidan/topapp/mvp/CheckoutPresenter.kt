@@ -6,7 +6,7 @@ import android.os.AsyncTask
 import android.util.Log
 import com.google.firebase.database.*
 import com.zidan.topapp.*
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import kotlinx.coroutines.*
 import java.io.*
 import java.util.*
@@ -31,7 +31,9 @@ class CheckoutPresenter(private val view: CheckoutView) {
 
         val tahun = FirebaseDatabase.getInstance().reference.child(cal.time.toYear())
         val bulan = tahun.child(cal.time.toMonth())
-        val pekan = bulan.child("Pekan Ke ${cal.get(Calendar.WEEK_OF_MONTH)}")
+
+        val pekan = bulan.child("Periode ${getPeriod()}")
+
         val hari = pekan.child(cal.time.toSimpleString())
 
         val pembelian = if (isGojek) hari.child("Gojek")
@@ -40,15 +42,17 @@ class CheckoutPresenter(private val view: CheckoutView) {
         for (i in selectedItems.indices) {
             val item = pembelian.child(selectedItems[i].name)
 
+            val totalItems = if (isGojek) selectedItems[i].gojekPrice.toInt() * 1000
+            else selectedItems[i].price.toInt() * 1000
+
+            val allTotal = totalItems * selectedItems[i].count
+
             hari.runTransaction(object : Transaction.Handler {
 
                 override fun onComplete(p0: DatabaseError?, p1: Boolean, p2: DataSnapshot?) {}
 
                 override fun doTransaction(mutableData: MutableData): Transaction.Result {
                     var totalSales = mutableData.child("TotalSales").getValue(Int::class.java)
-
-                    val allTotal = if (isGojek) selectedItems[i].gojekPrice.toInt() * 1000
-                    else selectedItems[i].price.toInt() * 1000
 
                     if (totalSales == null){
                         totalSales = allTotal
@@ -68,13 +72,10 @@ class CheckoutPresenter(private val view: CheckoutView) {
                 override fun doTransaction(mutableData: MutableData): Transaction.Result {
                     var sales = mutableData.child("Sales").getValue(Int::class.java)
 
-                    val allSales = if (isGojek) selectedItems[i].gojekPrice.toInt() * 1000
-                    else selectedItems[i].price.toInt() * 1000
-
                     if (sales == null){
-                        sales = allSales
+                        sales = allTotal
                     } else {
-                        sales += allSales
+                        sales += allTotal
                     }
 
                     mutableData.child("Sales").value = sales
@@ -94,16 +95,10 @@ class CheckoutPresenter(private val view: CheckoutView) {
                         jumlah += selectedItems[i].count
                     }
 
-                    val theTotal = if (isGojek) {
-                        selectedItems[i].count * selectedItems[i].gojekPrice.toInt() * 1000
-                    } else {
-                        selectedItems[i].count * selectedItems[i].price.toInt() * 1000
-                    }
-
                     if (total == null){
-                        total = theTotal
+                        total = allTotal
                     } else {
-                        total += theTotal
+                        total += allTotal
                     }
 
                     mutableData.child("Jumlah").value = jumlah
@@ -116,6 +111,7 @@ class CheckoutPresenter(private val view: CheckoutView) {
         }
 
         if (isPromo){
+
             hari.runTransaction(object : Transaction.Handler {
 
                 override fun doTransaction(mutableData: MutableData): Transaction.Result {
@@ -139,7 +135,6 @@ class CheckoutPresenter(private val view: CheckoutView) {
                     }
 
                     val allPromo = disc + vouc
-
                     totalSales -= allPromo
 
                     mutableData.child("TotalSales").value = totalSales

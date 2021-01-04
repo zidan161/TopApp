@@ -7,7 +7,7 @@ import android.support.v7.widget.*
 import android.view.LayoutInflater
 import android.view.*
 import com.zidan.topapp.adapter.MainAdapter
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import com.zidan.topapp.mvp.MainPresenter
 import com.zidan.topapp.mvp.MainView
 import org.jetbrains.anko.*
@@ -49,7 +49,7 @@ class OtherFragment : Fragment(), MainView {
         super.onAttach(context)
     }
 
-    private fun clickButton(item: Makanan ,param: String){
+    private fun clickButton(item: Makanan, param: String){
 
         if (param == "Minus") {
 

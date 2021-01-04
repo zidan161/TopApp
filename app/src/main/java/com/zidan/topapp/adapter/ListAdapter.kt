@@ -4,7 +4,7 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.*
 import com.zidan.topapp.R
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.food_list.*
 

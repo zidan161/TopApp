@@ -17,6 +17,17 @@ fun View.gone() {
     visibility = View.GONE
 }
 
+fun getPeriod(): Int {
+    val cal = Calendar.getInstance()
+    val day = cal.get(Calendar.DAY_OF_MONTH)
+    return when (day) {
+        in 1..7 -> 1
+        in 8..15 -> 2
+        in 16..22 -> 3
+        else -> 4
+    }
+}
+
 @SuppressLint("SimpleDateFormat")
 fun Date.toSimpleString(): String {
     return SimpleDateFormat("EEE, dd MMM yyyy").format(this)

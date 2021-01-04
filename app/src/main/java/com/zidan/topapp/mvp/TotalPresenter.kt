@@ -16,7 +16,7 @@ class TotalPresenter(private val view: TotalView) {
 
         val bulan = FirebaseDatabase.getInstance().reference.child(cal.time.toYear()).child(cal.time.toMonth())
 
-        val hari = bulan.child("Pekan Ke ${cal.get(Calendar.WEEK_OF_MONTH)}").child(cal.time.toSimpleString())
+        val hari = bulan.child("Periode ${getPeriod()}").child(cal.time.toSimpleString())
 
         hari.runTransaction(object : Transaction.Handler {
 
@@ -37,10 +37,10 @@ class TotalPresenter(private val view: TotalView) {
                 if (disc == null) disc = 0
                 if (vouc == null) vouc = 0
 
-                totalSales = sales
                 totalNonGojek = nonGojek
                 totalGojek = gojek
                 promo = disc + vouc
+                totalSales = sales
 
                 return Transaction.success(mutableData)
             }

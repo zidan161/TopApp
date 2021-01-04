@@ -13,7 +13,7 @@ import android.view.KeyEvent
 import android.widget.RadioButton
 import com.zidan.topapp.*
 import com.zidan.topapp.adapter.ListAdapter
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import com.zidan.topapp.mvp.*
 import kotlinx.android.synthetic.main.checkout_view.*
 import org.jetbrains.anko.*

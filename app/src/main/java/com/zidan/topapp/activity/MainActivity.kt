@@ -1,7 +1,6 @@
 package com.zidan.topapp.activity
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.*
@@ -10,7 +9,7 @@ import android.support.v7.widget.Toolbar
 import android.view.*
 import com.zidan.topapp.R
 import com.zidan.topapp.adapter.*
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import com.zidan.topapp.fragment.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
@@ -124,40 +123,14 @@ class MainActivity : AppCompatActivity(), TotalView,
     override fun setTotalSales(total: Int, totalNonGojek: Int, totalGojek: Int, promo: Int) {
         val formatter = DecimalFormat("##,###,###")
 
-        val setor = "setor"
-        val nonGojek = "setorNonGojek"
-        val gojek = "setorGojek"
-        val setorPromo = "setorPromo"
-
-        val preferences = getSharedPreferences("myPref", Context.MODE_PRIVATE)
-        val setoranAwal = preferences.getInt(setor, 0)
-        val setoranNonGojek = preferences.getInt(nonGojek, 0)
-        val setoranGojek = preferences.getInt(gojek, 0)
-        val setoranPromo = preferences.getInt(setorPromo, 0)
-
-        val trueTotal = "NonGojek: Rp ${formatter.format(totalNonGojek - setoranNonGojek)}\n\n" +
-                "Gojek: Rp ${formatter.format(totalGojek - setoranGojek)}\n\n" +
-                "Promo: Rp ${formatter.format(promo - setoranPromo)}\n\n" +
-                "Total: Rp ${formatter.format(total - setoranAwal)}"
+        val trueTotal = "NonGojek: Rp ${formatter.format(totalNonGojek)}\n\n" +
+                "Gojek: Rp ${formatter.format(totalGojek)}\n\n" +
+                "Promo: Rp ${formatter.format(promo)}\n\n" +
+                "Total: Rp ${formatter.format(total)}"
 
         alert {
             message = trueTotal
-            positiveButton("SETOR"){
-                if (setoranAwal > 0){
-                    preferences.edit().putInt(setor, 0).apply()
-                    preferences.edit().putInt(nonGojek, 0).apply()
-                    preferences.edit().putInt(gojek, 0).apply()
-                    preferences.edit().putInt(setorPromo, 0).apply()
-                }
-                else {
-                    preferences.edit().putInt(setor, total).apply()
-                    preferences.edit().putInt(nonGojek, totalNonGojek).apply()
-                    preferences.edit().putInt(gojek, totalGojek).apply()
-                    preferences.edit().putInt(setorPromo, promo).apply()
-                }
-                it.cancel()
-            }
-            negativeButton("OK"){ it.cancel() }
+            positiveButton("OK"){ it.cancel() }
         }.show()
         loading.cancel()
     }

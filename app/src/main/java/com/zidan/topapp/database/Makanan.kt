@@ -1,4 +1,4 @@
-package com.zidan.topapp.data
+package com.zidan.topapp.database
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

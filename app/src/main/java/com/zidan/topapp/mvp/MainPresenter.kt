@@ -2,7 +2,7 @@ package com.zidan.topapp.mvp
 
 import android.content.Context
 import com.zidan.topapp.R
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 
 class MainPresenter(private val view: MainView) {
 

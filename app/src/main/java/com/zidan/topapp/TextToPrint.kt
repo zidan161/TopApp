@@ -1,7 +1,7 @@
 package com.zidan.topapp
 
 import android.bluetooth.BluetoothSocket
-import com.zidan.topapp.data.Makanan
+import com.zidan.topapp.database.Makanan
 import java.io.OutputStream
 import java.text.DecimalFormat
 import java.util.*

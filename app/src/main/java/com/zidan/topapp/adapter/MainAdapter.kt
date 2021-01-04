@@ -4,7 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.*
-import com.zidan.topapp.data.Makanan
+import com.bumptech.glide.Glide
+import com.zidan.topapp.database.Makanan
 import com.zidan.topapp.*
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.content_view.*
@@ -33,7 +34,7 @@ class MainAdapter(private val ctx: Context, private val items: List<Makanan>,
 
         @SuppressLint("SetTextI18n")
         fun bindItem(item: Makanan, listener1: (Makanan) -> Unit, listener2: (Makanan) -> Unit) {
-            img_food.setImageResource(item.image)
+            Glide.with(containerView).load(item.image).into(img_food)
             tv_name_food.text = item.name
             tv_price_food.text = "Rp ${item.price}.000"
             tv_jumlah.text = "${item.count}"
